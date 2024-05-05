@@ -1,0 +1,96 @@
+[gd_scene load_steps=12 format=3 uid="uid://cm36b7qv06e27"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_h4lfs"]
+[ext_resource type="Texture2D" uid="uid://bm06otfg2dwvq" path="res://assets/backgrounds/main.png" id="2_d85b8"]
+[ext_resource type="Texture2D" uid="uid://cti4kekykd5ft" path="res://assets/sprites/trom.png" id="2_jv4ck"]
+[ext_resource type="PackedScene" uid="uid://ck8tv6m4v2qys" path="res://scenes/elements/frame.tscn" id="3_pvyt4"]
+[ext_resource type="PackedScene" uid="uid://balupffgs472l" path="res://scenes/elements/hold.tscn" id="4_njdwl"]
+[ext_resource type="Texture2D" uid="uid://dcawgp82kyhte" path="res://assets/ui/notes1.png" id="6_ymvlx"]
+[ext_resource type="Texture2D" uid="uid://ce5ah35a65q2l" path="res://assets/ui/configuration.png" id="7_midln"]
+[ext_resource type="Texture2D" uid="uid://cfsdcrohedfjj" path="res://assets/backgrounds/main_frames.png" id="8_s7pf8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p64xs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3voi0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a7n4h"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_h4lfs")
+
+[node name="Camera" type="Camera2D" parent="."]
+offset = Vector2(72, 128)
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(72, 128)
+scale = Vector2(2, 2)
+texture = ExtResource("2_d85b8")
+
+[node name="FramesBackground" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(72, 128)
+scale = Vector2(2, 2)
+texture = ExtResource("8_s7pf8")
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="Gameplay" type="Node2D" parent="Buttons"]
+position = Vector2(48, 132)
+
+[node name="Sprite2D" type="Sprite2D" parent="Buttons/Gameplay"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_jv4ck")
+
+[node name="Area2D" type="Area2D" parent="Buttons/Gameplay/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Gameplay/Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_p64xs")
+
+[node name="Frame" parent="Buttons/Gameplay" instance=ExtResource("3_pvyt4")]
+scale = Vector2(2, 2)
+
+[node name="Hold" parent="Buttons/Gameplay" instance=ExtResource("4_njdwl")]
+visible = false
+scale = Vector2(2, 2)
+
+[node name="Gameplay2" type="Node2D" parent="Buttons"]
+position = Vector2(96, 132)
+
+[node name="Sprite2D" type="Sprite2D" parent="Buttons/Gameplay2"]
+scale = Vector2(2, 2)
+texture = ExtResource("6_ymvlx")
+
+[node name="Area2D" type="Area2D" parent="Buttons/Gameplay2/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Gameplay2/Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_3voi0")
+
+[node name="Frame" parent="Buttons/Gameplay2" instance=ExtResource("3_pvyt4")]
+scale = Vector2(2, 2)
+
+[node name="Hold" parent="Buttons/Gameplay2" instance=ExtResource("4_njdwl")]
+visible = false
+scale = Vector2(2, 2)
+
+[node name="Configuration" type="Node2D" parent="Buttons"]
+position = Vector2(72, 180)
+
+[node name="Sprite2D" type="Sprite2D" parent="Buttons/Configuration"]
+scale = Vector2(2, 2)
+texture = ExtResource("7_midln")
+
+[node name="Area2D" type="Area2D" parent="Buttons/Configuration/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Configuration/Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_a7n4h")
+
+[node name="Frame" parent="Buttons/Configuration" instance=ExtResource("3_pvyt4")]
+scale = Vector2(2, 2)
+
+[node name="Hold" parent="Buttons/Configuration" instance=ExtResource("4_njdwl")]
+visible = false
+scale = Vector2(2, 2)
+
+[connection signal="input_event" from="Buttons/Gameplay/Sprite2D/Area2D" to="." method="_on_gameplay_click"]
+[connection signal="input_event" from="Buttons/Gameplay2/Sprite2D/Area2D" to="." method="_on_gameplay2_click"]
+[connection signal="input_event" from="Buttons/Configuration/Sprite2D/Area2D" to="." method="_on_configuration_click"]

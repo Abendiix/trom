@@ -1,0 +1,202 @@
+[gd_scene load_steps=15 format=3 uid="uid://b4oajswkanq4v"]
+
+[ext_resource type="Script" path="res://scripts/game2.gd" id="1_w6byl"]
+[ext_resource type="Texture2D" uid="uid://br7xrb6ny1slh" path="res://assets/ui/notes2.png" id="2_jabxk"]
+[ext_resource type="Texture2D" uid="uid://dje70m86fws24" path="res://assets/backgrounds/game2.png" id="2_x66ak"]
+[ext_resource type="PackedScene" uid="uid://ck8tv6m4v2qys" path="res://scenes/elements/frame.tscn" id="3_1s5sg"]
+[ext_resource type="PackedScene" uid="uid://balupffgs472l" path="res://scenes/elements/hold.tscn" id="4_vf66c"]
+[ext_resource type="Texture2D" uid="uid://dxj76lbocj0u" path="res://assets/ui/back.png" id="5_l42ki"]
+[ext_resource type="Texture2D" uid="uid://cwlwr2i61kt4m" path="res://assets/ui/play.png" id="6_3arpd"]
+[ext_resource type="Texture2D" uid="uid://s7w7qwev3erm" path="res://assets/ui/arrow_yellow.png" id="6_5j5en"]
+[ext_resource type="Texture2D" uid="uid://cti4kekykd5ft" path="res://assets/sprites/trom.png" id="6_engos"]
+[ext_resource type="Texture2D" uid="uid://bsfig2uij514t" path="res://assets/ui/ok.png" id="7_0uq4b"]
+[ext_resource type="Texture2D" uid="uid://o3lrmotffl4j" path="res://assets/sprites/notes1.png" id="7_xvmx5"]
+[ext_resource type="AudioStream" uid="uid://b4kt3qbdyihxr" path="res://assets/sounds/basicLa.wav" id="10_4b7bi"]
+[ext_resource type="LabelSettings" uid="uid://db8bu5v0npugd" path="res://assets/font.tres" id="12_473qq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fnsh8"]
+
+[node name="Game2" type="Node2D"]
+script = ExtResource("1_w6byl")
+
+[node name="Camera" type="Camera2D" parent="."]
+offset = Vector2(72, 128)
+
+[node name="FramesBackground" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(72, 128)
+scale = Vector2(2, 2)
+texture = ExtResource("2_x66ak")
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="Note1" type="Node2D" parent="Buttons"]
+position = Vector2(28, 138)
+
+[node name="Sprite2D" type="Sprite2D" parent="Buttons/Note1"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_jabxk")
+
+[node name="Area2D" type="Area2D" parent="Buttons/Note1/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Note1/Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_fnsh8")
+
+[node name="Frame" parent="Buttons/Note1" instance=ExtResource("3_1s5sg")]
+scale = Vector2(2, 2)
+
+[node name="Hold" parent="Buttons/Note1" instance=ExtResource("4_vf66c")]
+scale = Vector2(2, 2)
+
+[node name="ArrowYellow" type="Sprite2D" parent="Buttons/Note1"]
+visible = false
+position = Vector2(0, -27)
+scale = Vector2(2, 2)
+texture = ExtResource("6_5j5en")
+
+[node name="Note2" type="Node2D" parent="Buttons"]
+position = Vector2(72, 138)
+
+[node name="Sprite2D" type="Sprite2D" parent="Buttons/Note2"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_jabxk")
+
+[node name="Area2D" type="Area2D" parent="Buttons/Note2/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Note2/Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_fnsh8")
+
+[node name="Frame" parent="Buttons/Note2" instance=ExtResource("3_1s5sg")]
+scale = Vector2(2, 2)
+
+[node name="Hold" parent="Buttons/Note2" instance=ExtResource("4_vf66c")]
+scale = Vector2(2, 2)
+
+[node name="ArrowYellow" type="Sprite2D" parent="Buttons/Note2"]
+visible = false
+position = Vector2(0, -27)
+scale = Vector2(2, 2)
+texture = ExtResource("6_5j5en")
+
+[node name="Note3" type="Node2D" parent="Buttons"]
+position = Vector2(116, 138)
+
+[node name="Sprite2D" type="Sprite2D" parent="Buttons/Note3"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_jabxk")
+
+[node name="Area2D" type="Area2D" parent="Buttons/Note3/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Note3/Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_fnsh8")
+
+[node name="Frame" parent="Buttons/Note3" instance=ExtResource("3_1s5sg")]
+scale = Vector2(2, 2)
+
+[node name="Hold" parent="Buttons/Note3" instance=ExtResource("4_vf66c")]
+scale = Vector2(2, 2)
+
+[node name="ArrowYellow" type="Sprite2D" parent="Buttons/Note3"]
+visible = false
+position = Vector2(0, -27)
+scale = Vector2(2, 2)
+texture = ExtResource("6_5j5en")
+
+[node name="Play" type="Node2D" parent="Buttons"]
+position = Vector2(50, 180)
+
+[node name="Sprite2D" type="Sprite2D" parent="Buttons/Play"]
+scale = Vector2(2, 2)
+texture = ExtResource("6_3arpd")
+
+[node name="Area2D" type="Area2D" parent="Buttons/Play/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Play/Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_fnsh8")
+
+[node name="Frame" parent="Buttons/Play" instance=ExtResource("3_1s5sg")]
+scale = Vector2(2, 2)
+
+[node name="Hold" parent="Buttons/Play" instance=ExtResource("4_vf66c")]
+scale = Vector2(2, 2)
+
+[node name="Ok" type="Node2D" parent="Buttons"]
+position = Vector2(94, 180)
+
+[node name="Sprite2D" type="Sprite2D" parent="Buttons/Ok"]
+scale = Vector2(2, 2)
+texture = ExtResource("7_0uq4b")
+
+[node name="Area2D" type="Area2D" parent="Buttons/Ok/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Ok/Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_fnsh8")
+
+[node name="Frame" parent="Buttons/Ok" instance=ExtResource("3_1s5sg")]
+scale = Vector2(2, 2)
+
+[node name="Hold" parent="Buttons/Ok" instance=ExtResource("4_vf66c")]
+scale = Vector2(2, 2)
+
+[node name="Back" type="Node2D" parent="Buttons"]
+position = Vector2(72, 222)
+
+[node name="Sprite2D" type="Sprite2D" parent="Buttons/Back"]
+scale = Vector2(2, 2)
+texture = ExtResource("5_l42ki")
+
+[node name="Area2D" type="Area2D" parent="Buttons/Back/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Back/Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_fnsh8")
+
+[node name="Frame" parent="Buttons/Back" instance=ExtResource("3_1s5sg")]
+scale = Vector2(2, 2)
+
+[node name="Hold" parent="Buttons/Back" instance=ExtResource("4_vf66c")]
+scale = Vector2(2, 2)
+
+[node name="TromAndNodes" type="Node2D" parent="."]
+position = Vector2(72, 72)
+rotation = -0.261799
+
+[node name="Trom" type="Sprite2D" parent="TromAndNodes"]
+scale = Vector2(2, 2)
+texture = ExtResource("6_engos")
+
+[node name="NotesRight" type="Sprite2D" parent="TromAndNodes"]
+position = Vector2(27.8775, -3.06934)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_xvmx5")
+
+[node name="NotesLeft" type="Sprite2D" parent="TromAndNodes"]
+position = Vector2(-27.7859, 3.75652)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_xvmx5")
+
+[node name="SoundEffect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_4b7bi")
+volume_db = 5.0
+
+[node name="Current" type="Label" parent="."]
+offset_left = 10.0
+offset_top = 2.0
+offset_right = 70.0
+offset_bottom = 28.0
+label_settings = ExtResource("12_473qq")
+horizontal_alignment = 1
+
+[node name="Record" type="Label" parent="."]
+offset_left = 76.0
+offset_top = 2.0
+offset_right = 136.0
+offset_bottom = 28.0
+label_settings = ExtResource("12_473qq")
+horizontal_alignment = 1
+
+[connection signal="input_event" from="Buttons/Note1/Sprite2D/Area2D" to="." method="_on_note1_click"]
+[connection signal="input_event" from="Buttons/Note2/Sprite2D/Area2D" to="." method="_on_note2_click"]
+[connection signal="input_event" from="Buttons/Note3/Sprite2D/Area2D" to="." method="_on_note3_click"]
+[connection signal="input_event" from="Buttons/Play/Sprite2D/Area2D" to="." method="_on_play_click"]
+[connection signal="input_event" from="Buttons/Ok/Sprite2D/Area2D" to="." method="_on_ok_click"]
+[connection signal="input_event" from="Buttons/Back/Sprite2D/Area2D" to="." method="_on_back_click"]

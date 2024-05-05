@@ -1,0 +1,189 @@
+[gd_scene load_steps=14 format=3 uid="uid://b3i7p7n5au7bg"]
+
+[ext_resource type="Script" path="res://scripts/configuration.gd" id="1_74b0q"]
+[ext_resource type="Texture2D" uid="uid://dn1a3y7w1kc8g" path="res://assets/ui/vibration1.png" id="2_dhxo0"]
+[ext_resource type="PackedScene" uid="uid://ck8tv6m4v2qys" path="res://scenes/elements/frame.tscn" id="4_utj2s"]
+[ext_resource type="PackedScene" uid="uid://balupffgs472l" path="res://scenes/elements/hold.tscn" id="5_cw120"]
+[ext_resource type="Texture2D" uid="uid://5xs25dryq351" path="res://assets/ui/arrow.png" id="5_o1kqw"]
+[ext_resource type="Texture2D" uid="uid://we2qaa4vhwsd" path="res://assets/ui/vibration2.png" id="6_m3x4f"]
+[ext_resource type="Texture2D" uid="uid://cfgobsa6qofva" path="res://assets/ui/vibration3.png" id="7_f3dr0"]
+[ext_resource type="Texture2D" uid="uid://d31pajf58bwjt" path="res://assets/ui/tap.png" id="8_6hwj5"]
+[ext_resource type="Texture2D" uid="uid://cngicn3skcpoh" path="res://assets/ui/credits.png" id="8_bxn1t"]
+[ext_resource type="Texture2D" uid="uid://dxj76lbocj0u" path="res://assets/ui/back.png" id="9_oexrh"]
+[ext_resource type="Texture2D" uid="uid://di1v8dkaey4b4" path="res://assets/ui/holding.png" id="9_spe2m"]
+[ext_resource type="Texture2D" uid="uid://nqa3dg1hp0is" path="res://assets/backgrounds/config.png" id="12_or01r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05h1y"]
+
+[node name="Configuration" type="Node2D"]
+script = ExtResource("1_74b0q")
+
+[node name="Camera" type="Camera2D" parent="."]
+offset = Vector2(72, 128)
+
+[node name="FramesBackground" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(72, 128)
+scale = Vector2(2, 2)
+texture = ExtResource("12_or01r")
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="Vibration1" type="Node2D" parent="Buttons"]
+position = Vector2(28, 58)
+
+[node name="Sprite2D" type="Sprite2D" parent="Buttons/Vibration1"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_dhxo0")
+
+[node name="Area2D" type="Area2D" parent="Buttons/Vibration1/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Vibration1/Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_05h1y")
+
+[node name="Frame" parent="Buttons/Vibration1" instance=ExtResource("4_utj2s")]
+scale = Vector2(2, 2)
+
+[node name="Hold" parent="Buttons/Vibration1" instance=ExtResource("5_cw120")]
+scale = Vector2(2, 2)
+
+[node name="Arrow" type="Sprite2D" parent="Buttons/Vibration1"]
+position = Vector2(0, -27)
+scale = Vector2(2, 2)
+texture = ExtResource("5_o1kqw")
+
+[node name="Vibration2" type="Node2D" parent="Buttons"]
+position = Vector2(72, 58)
+
+[node name="Sprite2D" type="Sprite2D" parent="Buttons/Vibration2"]
+scale = Vector2(2, 2)
+texture = ExtResource("6_m3x4f")
+
+[node name="Area2D" type="Area2D" parent="Buttons/Vibration2/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Vibration2/Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_05h1y")
+
+[node name="Frame" parent="Buttons/Vibration2" instance=ExtResource("4_utj2s")]
+scale = Vector2(2, 2)
+
+[node name="Hold" parent="Buttons/Vibration2" instance=ExtResource("5_cw120")]
+scale = Vector2(2, 2)
+
+[node name="Arrow" type="Sprite2D" parent="Buttons/Vibration2"]
+position = Vector2(0, -27)
+scale = Vector2(2, 2)
+texture = ExtResource("5_o1kqw")
+
+[node name="Vibration3" type="Node2D" parent="Buttons"]
+position = Vector2(116, 58)
+
+[node name="Sprite2D" type="Sprite2D" parent="Buttons/Vibration3"]
+scale = Vector2(2, 2)
+texture = ExtResource("7_f3dr0")
+
+[node name="Area2D" type="Area2D" parent="Buttons/Vibration3/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Vibration3/Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_05h1y")
+
+[node name="Frame" parent="Buttons/Vibration3" instance=ExtResource("4_utj2s")]
+scale = Vector2(2, 2)
+
+[node name="Hold" parent="Buttons/Vibration3" instance=ExtResource("5_cw120")]
+scale = Vector2(2, 2)
+
+[node name="Arrow" type="Sprite2D" parent="Buttons/Vibration3"]
+position = Vector2(0, -27)
+scale = Vector2(2, 2)
+texture = ExtResource("5_o1kqw")
+
+[node name="ModeTap" type="Node2D" parent="Buttons"]
+position = Vector2(50, 116)
+
+[node name="Sprite2D" type="Sprite2D" parent="Buttons/ModeTap"]
+scale = Vector2(2, 2)
+texture = ExtResource("8_6hwj5")
+
+[node name="Area2D" type="Area2D" parent="Buttons/ModeTap/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/ModeTap/Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_05h1y")
+
+[node name="Frame" parent="Buttons/ModeTap" instance=ExtResource("4_utj2s")]
+scale = Vector2(2, 2)
+
+[node name="Hold" parent="Buttons/ModeTap" instance=ExtResource("5_cw120")]
+scale = Vector2(2, 2)
+
+[node name="Arrow" type="Sprite2D" parent="Buttons/ModeTap"]
+position = Vector2(0, -27)
+scale = Vector2(2, 2)
+texture = ExtResource("5_o1kqw")
+
+[node name="ModeTap_Hold" type="Node2D" parent="Buttons"]
+position = Vector2(94, 116)
+
+[node name="Sprite2D" type="Sprite2D" parent="Buttons/ModeTap_Hold"]
+scale = Vector2(2, 2)
+texture = ExtResource("9_spe2m")
+
+[node name="Area2D" type="Area2D" parent="Buttons/ModeTap_Hold/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/ModeTap_Hold/Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_05h1y")
+
+[node name="Frame" parent="Buttons/ModeTap_Hold" instance=ExtResource("4_utj2s")]
+scale = Vector2(2, 2)
+
+[node name="Hold" parent="Buttons/ModeTap_Hold" instance=ExtResource("5_cw120")]
+scale = Vector2(2, 2)
+
+[node name="Arrow" type="Sprite2D" parent="Buttons/ModeTap_Hold"]
+position = Vector2(0, -27)
+scale = Vector2(2, 2)
+texture = ExtResource("5_o1kqw")
+
+[node name="Credits" type="Node2D" parent="Buttons"]
+position = Vector2(72, 160)
+
+[node name="Sprite2D" type="Sprite2D" parent="Buttons/Credits"]
+scale = Vector2(2, 2)
+texture = ExtResource("8_bxn1t")
+
+[node name="Area2D" type="Area2D" parent="Buttons/Credits/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Credits/Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_05h1y")
+
+[node name="Frame" parent="Buttons/Credits" instance=ExtResource("4_utj2s")]
+scale = Vector2(2, 2)
+
+[node name="Hold" parent="Buttons/Credits" instance=ExtResource("5_cw120")]
+scale = Vector2(2, 2)
+
+[node name="Back" type="Node2D" parent="Buttons"]
+position = Vector2(72, 222)
+
+[node name="Sprite2D" type="Sprite2D" parent="Buttons/Back"]
+scale = Vector2(2, 2)
+texture = ExtResource("9_oexrh")
+
+[node name="Area2D" type="Area2D" parent="Buttons/Back/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Back/Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_05h1y")
+
+[node name="Frame" parent="Buttons/Back" instance=ExtResource("4_utj2s")]
+scale = Vector2(2, 2)
+
+[node name="Hold" parent="Buttons/Back" instance=ExtResource("5_cw120")]
+scale = Vector2(2, 2)
+
+[connection signal="input_event" from="Buttons/Vibration1/Sprite2D/Area2D" to="." method="_on_vibration1_click"]
+[connection signal="input_event" from="Buttons/Vibration2/Sprite2D/Area2D" to="." method="_on_vibration2_click"]
+[connection signal="input_event" from="Buttons/Vibration3/Sprite2D/Area2D" to="." method="_on_vibration3_click"]
+[connection signal="input_event" from="Buttons/ModeTap/Sprite2D/Area2D" to="." method="_on_modetap_click"]
+[connection signal="input_event" from="Buttons/ModeTap_Hold/Sprite2D/Area2D" to="." method="_on_modetap_hold_click"]
+[connection signal="input_event" from="Buttons/Credits/Sprite2D/Area2D" to="." method="_on_credits_click"]
+[connection signal="input_event" from="Buttons/Back/Sprite2D/Area2D" to="." method="_on_back_click"]

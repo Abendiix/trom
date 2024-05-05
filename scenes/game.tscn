@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=3 uid="uid://bi1pthqut7we"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_4ov6c"]
+[ext_resource type="Texture2D" uid="uid://cti4kekykd5ft" path="res://assets/sprites/trom.png" id="1_tbpsx"]
+[ext_resource type="Texture2D" uid="uid://cvrp0vp2fshy" path="res://assets/backgrounds/game1.png" id="2_nvjr6"]
+[ext_resource type="Texture2D" uid="uid://o3lrmotffl4j" path="res://assets/sprites/notes1.png" id="3_tosec"]
+[ext_resource type="Texture2D" uid="uid://dxj76lbocj0u" path="res://assets/ui/back.png" id="4_ch5a8"]
+[ext_resource type="PackedScene" uid="uid://ck8tv6m4v2qys" path="res://scenes/elements/frame.tscn" id="5_ugcr6"]
+[ext_resource type="PackedScene" uid="uid://balupffgs472l" path="res://scenes/elements/hold.tscn" id="6_uk5vj"]
+[ext_resource type="AudioStream" uid="uid://b4kt3qbdyihxr" path="res://assets/sounds/basicLa.wav" id="7_x8jkm"]
+[ext_resource type="LabelSettings" uid="uid://db8bu5v0npugd" path="res://assets/font.tres" id="9_cf251"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xv2sv"]
+size = Vector2(76, 133)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfpn2"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_4ov6c")
+
+[node name="Camera" type="Camera2D" parent="."]
+offset = Vector2(72, 128)
+
+[node name="FramesBackground" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(72, 128)
+scale = Vector2(2, 2)
+texture = ExtResource("2_nvjr6")
+
+[node name="TromAndNodes" type="Node2D" parent="."]
+position = Vector2(70, 114)
+rotation = -0.261799
+
+[node name="Trom" type="Sprite2D" parent="TromAndNodes"]
+scale = Vector2(2, 2)
+texture = ExtResource("1_tbpsx")
+
+[node name="Area2D" type="Area2D" parent="TromAndNodes/Trom"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TromAndNodes/Trom/Area2D"]
+position = Vector2(-0.845778, 7.02029)
+rotation = 0.261799
+shape = SubResource("RectangleShape2D_xv2sv")
+
+[node name="NotesRight" type="Sprite2D" parent="TromAndNodes"]
+position = Vector2(27.8775, -3.06934)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_tosec")
+
+[node name="NotesLeft" type="Sprite2D" parent="TromAndNodes"]
+position = Vector2(-27.7859, 3.75652)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_tosec")
+
+[node name="Back" type="Node2D" parent="."]
+position = Vector2(72, 222)
+
+[node name="Sprite2D" type="Sprite2D" parent="Back"]
+scale = Vector2(2, 2)
+texture = ExtResource("4_ch5a8")
+
+[node name="Area2D" type="Area2D" parent="Back/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back/Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_gfpn2")
+
+[node name="Frame" parent="Back" instance=ExtResource("5_ugcr6")]
+scale = Vector2(2, 2)
+
+[node name="Hold" parent="Back" instance=ExtResource("6_uk5vj")]
+scale = Vector2(2, 2)
+
+[node name="SoundEffect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_x8jkm")
+volume_db = 5.0
+
+[node name="Score" type="Label" parent="."]
+offset_left = 12.0
+offset_top = 2.0
+offset_right = 132.0
+offset_bottom = 28.0
+label_settings = ExtResource("9_cf251")
+horizontal_alignment = 1
+
+[connection signal="input_event" from="TromAndNodes/Trom/Area2D" to="." method="_on_trom_click"]
+[connection signal="mouse_exited" from="TromAndNodes/Trom/Area2D" to="." method="_on_trom_exit"]
+[connection signal="input_event" from="Back/Sprite2D/Area2D" to="." method="_on_back_click"]

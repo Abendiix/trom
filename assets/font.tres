@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://db8bu5v0npugd"]
+
+[ext_resource type="FontFile" uid="uid://cjqpb72qbu1wk" path="res://assets/SpritesLoveFont0.1.ttf" id="1_cecl2"]
+
+[resource]
+font = ExtResource("1_cecl2")
+font_size = 32
+font_color = Color(1, 0.67451, 0.34902, 1)

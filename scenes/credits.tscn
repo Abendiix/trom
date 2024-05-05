@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://oyo8hf38jt3k"]
+
+[ext_resource type="Script" path="res://scripts/credits.gd" id="1_2owm5"]
+[ext_resource type="Texture2D" uid="uid://c8m64d3fawrct" path="res://assets/backgrounds/credits.png" id="2_bwl4i"]
+[ext_resource type="Texture2D" uid="uid://dxj76lbocj0u" path="res://assets/ui/back.png" id="3_0apy0"]
+[ext_resource type="PackedScene" uid="uid://ck8tv6m4v2qys" path="res://scenes/elements/frame.tscn" id="4_cu828"]
+[ext_resource type="PackedScene" uid="uid://balupffgs472l" path="res://scenes/elements/hold.tscn" id="5_exxfm"]
+[ext_resource type="Texture2D" uid="uid://byhr6mify8tp8" path="res://assets/backgrounds/credits_frames.png" id="6_wgxy2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21ge8"]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_2owm5")
+
+[node name="Camera" type="Camera2D" parent="."]
+offset = Vector2(72, 128)
+
+[node name="FramesBackground" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(72, 128)
+scale = Vector2(2, 2)
+texture = ExtResource("6_wgxy2")
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="Back" type="Node2D" parent="Buttons"]
+position = Vector2(72, 222)
+
+[node name="Sprite2D" type="Sprite2D" parent="Buttons/Back"]
+scale = Vector2(2, 2)
+texture = ExtResource("3_0apy0")
+
+[node name="Area2D" type="Area2D" parent="Buttons/Back/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Back/Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_21ge8")
+
+[node name="Frame" parent="Buttons/Back" instance=ExtResource("4_cu828")]
+scale = Vector2(2, 2)
+
+[node name="Hold" parent="Buttons/Back" instance=ExtResource("5_exxfm")]
+scale = Vector2(2, 2)
+
+[node name="Credits" type="Sprite2D" parent="."]
+position = Vector2(72, 128)
+scale = Vector2(2, 2)
+texture = ExtResource("2_bwl4i")
+
+[connection signal="input_event" from="Buttons/Back/Sprite2D/Area2D" to="." method="_on_back_click"]

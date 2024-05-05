@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://ck8tv6m4v2qys"]
+
+[ext_resource type="Texture2D" uid="uid://de05uqqlyc6ut" path="res://assets/ui/frame.png" id="1_qvd7v"]
+[ext_resource type="Script" path="res://scripts/frame.gd" id="1_ssoxh"]
+
+[sub_resource type="Animation" id="Animation_83vrg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FrameSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_q6u06"]
+resource_name = "frame"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FrameSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_r7exs"]
+resource_name = "final"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FrameSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0es3l"]
+_data = {
+"RESET": SubResource("Animation_83vrg"),
+"final": SubResource("Animation_r7exs"),
+"frame": SubResource("Animation_q6u06")
+}
+
+[node name="Frame" type="Node2D"]
+script = ExtResource("1_ssoxh")
+
+[node name="FrameSheet" type="Sprite2D" parent="."]
+texture = ExtResource("1_qvd7v")
+hframes = 8
+
+[node name="FrameAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0es3l")
+}
