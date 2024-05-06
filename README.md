@@ -19,6 +19,14 @@ Repository for Trom's source code and assets. The source code is licensed under 
 ## Description and game images
 In this small game you can play the sound of a trumpet, where with each sound play, the game will display randomly colored notes near the trumpet. You can also try to guess which note is being played to test your hearing skills.
 
+<p>
+  <img src="https://github.com/Abendiix/trom/blob/main/readme_images/menumini.png?raw=true" width="100px">
+  <img src="https://github.com/Abendiix/trom/blob/main/readme_images/game1mini.png?raw=true" width="100px">
+  <img src="https://github.com/Abendiix/trom/blob/main/readme_images/game1_2mini.png?raw=true" width="100px">
+  <img src="https://github.com/Abendiix/trom/blob/main/readme_images/game2mini.png?raw=true" width="100px">
+  <img src="https://github.com/Abendiix/trom/blob/main/readme_images/configmini.png?raw=true" width="100px">
+</p>
+
 ## Modes and functionalities
 Trom has 2 available modes right now:
 - In the first mode, anyone can make the trumpet sound while increasing a counter of how many times the trumpet has been played.
