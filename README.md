@@ -1,12 +1,14 @@
 # Trom
-Repository for Trom's source code and assets. The source code is licensed under the [MIT License](https://opensource.org/license/mit) ([more](https://ieeexplore.ieee.org/document/9263265)) and all of the assets are in the public domain (under [CC0 Creative Commons' License](https://creativecommons.org/public-domain/cc0/))
+Repository for Trom's source code and assets. The source code is licensed under the [MIT License](https://opensource.org/license/mit) ([more](https://ieeexplore.ieee.org/document/9263265)) and all of the assets are in the public domain (under [CC0 Creative Commons' License](https://creativecommons.org/public-domain/cc0/)).
 
-## Platforms
-- Linux
-- Windows
-- MacOS
-- Android
-- iOS
+## Downloads - Platforms
+| Platforms | Available at (latest version - 0.10)|
+| --------- | ------------ |
+| Linux | [itch.io](https://abendiix.itch.io/trom), [Ko-fi](https://ko-fi.com/s/d5c1cd9f0c) or [GitHub](https://github.com/Abendiix/trom/releases/download/Trom0.10/Trom.x86_64) |
+| Windows | [itch.io](https://abendiix.itch.io/trom), [Ko-fi](https://ko-fi.com/s/d5c1cd9f0c) or [GitHub](https://github.com/Abendiix/trom/releases/download/Trom0.10/Trom.exe) |
+| MacOS | [itch.io](https://abendiix.itch.io/trom), [Ko-fi](https://ko-fi.com/s/d5c1cd9f0c) or [GitHub](https://github.com/Abendiix/trom/releases/download/Trom0.10/Trom.MacOS.zip) |
+| Android | [Play Store](https://play.google.com/store/apps/details?id=com.abendiix.trom), [itch.io](https://abendiix.itch.io/trom), [Ko-fi](https://ko-fi.com/s/d5c1cd9f0c) or [GitHub](https://github.com/Abendiix/trom/releases/tag/Trom0.10) |
+| iOS | [App Store](https://apps.apple.com/us/app/trom/id6496865166)
 
 ## Software that made Trom possible
 - Trom was developed on a computer running [Arch Linux](https://archlinux.org/).
