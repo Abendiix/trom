@@ -35,7 +35,8 @@ Trom has 2 available modes right now:
 Trom has a configuration menu where anyone can adjust the device vibration (if the device has a vibration motor, mostly for phones) and change between Tap&Hold mode or classic tap mode. Below this options, anyone can check Trom's credits.
 
 ### Tap&Hold
-Tap&Hold is a new approach to game playability and menu navigation where anyone can fully experience games and applications with a single button. This method/system came to life while developing Trom and others projects that have yet not released as a way to optimize any project's accessibility as it enables any game/app to be fully navigable with just one input.
+Tap&Hold is a new approach to game playability and menu navigation where anyone can fully experience games and applications with a single input. This method/system came to life while developing Trom and others projects that have yet not released as a way to optimize any project's accessibility as it enables any game/app to be fully navigable with just one input.
+
 <br>I want to push this method forward, improve it and make it a standard for as much projects as I can. This way, anyone will be able to enjoy games and apps with just the tap and hold of a button or any other input.
 
 <br>In Trom anyone can choose Tap&Hold from the settings menu and navigate the game's menu since all of Trom is controlled with the shown user interface. Tapping the screen, space bar or left-button on the mouse will make the game navigate across the available options on the user interface. Holding any of the latter will show an animation that fills the selected option. If the animation is cancelled the selected option will not occur while finishing will play the action.
