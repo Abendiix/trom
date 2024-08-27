@@ -1,4 +1,4 @@
-# Trom
+# Trom (version 0.10 - Godot 4.2.2)
 Repository for Trom's source code and assets. The source code is licensed under the [MIT License](https://opensource.org/license/mit) ([more](https://ieeexplore.ieee.org/document/9263265)) and all of the assets are in the public domain (under [CC0 Creative Commons' License](https://creativecommons.org/public-domain/cc0/)).
 
 ## Downloads - Platforms
