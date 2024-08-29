@@ -150,7 +150,7 @@ func _process(delta):
 		
 		if Input.is_action_just_released("play") && holds[active].hasFinished():
 			holds[active].endFinished()
-			var arrows = [$Buttons/Note1/ArrowYellow.visible, $Buttons/Note2/ArrowYellow.visible, $Buttons/Note3/ArrowYellow.visible]
+			var arrows = [$Buttons/Note1/ArrowYellow, $Buttons/Note2/ArrowYellow, $Buttons/Note3/ArrowYellow]
 			if active <= 2:
 				for a in arrows:
 					a.visible = false
